@@ -4,6 +4,7 @@ import React from 'react';
 // 컴포넌트 추가 : yarn add react-icons;
 // 'https://react-icons.github.io/react-icons/'에서 원하는 아이콘을 클릭
 import { FaTrashAlt } from 'react-icons/fa';
+import styles from './Todo.module.css';
 
 /* 
 Todo라는 이름의 React 컴포넌트를 정의.
@@ -29,18 +30,27 @@ export default function Todo({ todo, onUpdate, onDelete }) {
             - 체크박스: 할 일의 완료 여부를 나타내며 체크박스의 상태가 변경되면 handleChange 함수가 호출되어 할 일의 상태를 업데이트
             - 삭제 버튼: 삭제 버튼을 클릭하면 handleDelete 함수가 호출되어 할 일을 삭제
         */
-        <li>
+        <li className={styles.todo}>
             <input
                 type="checkbox"
                 id="checkbox"
+                className={styles.checkbox}
                 checked={status === 'completed'}
                 onChange={handleChange}
             />
-            <label htmlFor="checkbox">{text}</label>
-            <button onClick={handleDelete}>
-                { /* react-icons */ }
-                <FaTrashAlt />
-            </button>
+            <label
+                htmlFor="checkbox"
+                className={styles.text}>
+                {text}
+            </label>
+            <span className={styles.icon}>
+                <button
+                    onClick={handleDelete}
+                    className={styles.button}>
+                    {/* react-icons */}
+                    <FaTrashAlt />
+                </button>
+            </span>
         </li>
     );
 }

@@ -1,0 +1,36 @@
+.header {
+    display: flex; /* Flexbox로 설정 */
+    justify-content: space-between; /* 요소들을 가로 방향으로 균등하게 분할하여 배치 */
+    align-items: center;
+    background-color: var(--color-bg-dark); /* 배경색을 어두운 색상으로 지정 */
+    border-bottom: 1px solid var(--color-grey); /* 아래쪽에 회색 경계선 추가 */
+}
+
+.filters {
+    display: flex; /* Flexbox로 설정 */
+    margin-left: 0.8rem;
+}
+
+.filter {
+    font-size: 1.2rem; /* 글자 크기를 1.4rem으로 설정 */
+    margin: 0.2rem; /* 요소 주변에 0.3rem의 여백 추가 */
+    text-transform: capitalize; /* 텍스트를 대문자로 변환하여 표시 */
+    background-color: transparent; /* 배경색을 투명으로 설정 */
+    color: var(--color-accent);
+    opacity: 0.7;
+    font-weight: bold;
+}
+
+.filter:hover,
+.filter.selected {
+    opacity: 1;
+    color: var(--color-hover);
+    cursor: pointer;
+}
+
+.filter.selected::after {
+    content: '';
+    display: block;
+    margin-top: 0.2rem;
+    border: 1px solid var(--color-text);
+}

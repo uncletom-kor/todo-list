@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 // Terminal에서 'yarn add uuid'를 통해 uuid 컴포넌트를 설치후 import한다.
 // 자세한 내용은 uuid 사이트를 참조
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+import styles from './AddTodo.module.css';
 
 export default function AddTodo({ onAdd }) {
     const [text, setText] = useState('');
@@ -26,14 +27,17 @@ export default function AddTodo({ onAdd }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form
+            className={styles.form}
+            onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="할일을 입력하세요."
+                className={styles.input}
                 value={text}
                 onChange={handleChange}
             />
-            <button>Add Todo</button>
+            <button className={styles.button}>Add</button>
         </form>
     );
 }

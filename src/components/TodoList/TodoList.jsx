@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import AddTodo from './AddTodo/AddTodo';
 import Todo from './Todo/Todo';
+import styles from './TodoList.module.css';
 
-export default function TodoList({filter}) {
+export default function TodoList({ filter }) {
     const [todos, setTodos] = useState([
         { id: '123', text: '장보기', status: 'active' },
         { id: '124', text: '공부하기', status: 'active' },
@@ -30,20 +31,23 @@ export default function TodoList({filter}) {
     const filteredTodos = getFilteredItems(todos, filter);
 
     return (
-        <section>
+        <section className={styles.container}>
             {/* 할 일 목록을 표시하기 위하여 ul태그를 사용함. */}
-            <ul>
-                { // filteredTodos 값을 rendering한다.
-                filteredTodos.map(item => (
-                    <Todo
-                        key={item.id}
-                        todo={item}
-                        onUpdate={handleUpdate}
-                        onDelete={handleDelete}
-                    />
-                ))}
+            <ul className={styles.list}>
+                {
+                    // filteredTodos 값을 rendering한다.
+                    filteredTodos.map(item => (
+                        <Todo
+                            key={item.id}
+                            todo={item}
+                            onUpdate={handleUpdate}
+                            onDelete={handleDelete}
+                        />
+                    ))
+                }
             </ul>
             <AddTodo onAdd={handleAdd} />
+
         </section>
     );
 }
