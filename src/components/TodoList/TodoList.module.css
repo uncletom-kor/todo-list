@@ -1,13 +1,12 @@
 .container {
-    height: 100%;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-bg);
+    height: 418px; /* 컨테이너의 높이를 318픽셀로 설정 */
+    min-height: 0; /* 컨테이너의 최소 높이를 0으로 설정 */
+    display: flex; /* Flexbox 레이아웃을 사용 */
+    flex-direction: column; /* Flex 아이템을 세로로 배열 */
+    background-color: var(--color-bg); /* 배경색을 --color-bg 변수로 지정 */
 }
 
 .list {
-    flex: 1 1 auto;
-    overflow: auto;
-
+    flex: 1 1 auto; /* Flex 아이템이 가용한 공간을 모두 차지하도록 설정 */
+    overflow: auto; /* 내용이 넘칠 경우 스크롤바를 표시 */
 }

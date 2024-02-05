@@ -1,38 +1,37 @@
 .todo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    margin: 0.1rem 0;
-    color: var(--color-text);
-
+    display: flex; /* flex 컨테이너로 설정하여 자식 요소를 가로로 정렬합니다. */
+    justify-content: space-between; /* 자식 요소 사이에 공간을 균등하게 배치합니다. */
+    align-items: center; /* 자식 요소를 수직으로 가운데 정렬합니다. */
+    padding: 0.5rem 1rem; /* 상하 0.5rem, 좌우 1rem의 padding을 설정합니다. */
+    margin: 0.1rem 0; /* 상하 0.1rem, 좌우 0의 margin을 설정합니다. */
+    color: var(--color-text); /* 텍스트 색상을 변수(--color-text)로 설정합니다. */
 }
 
 .checkbox {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.2rem; /* 가로 길이를 1.2rem으로 설정합니다. */
+    height: 1.2rem; /* 세로 길이를 1.2rem으로 설정합니다. */
 }
 
 .text {
-    flex: 1 1 0%;
-    margin-left: 0.3rem;
-    font-size: 1.2rem;
+    flex: 1 1 0%; /* 자동으로 남은 공간을 채우기 위해 flex 속성을 설정합니다. */
+    margin-left: 0.3rem; /* 왼쪽 여백을 0.3rem으로 설정합니다. */
+    font-size: 1.2rem; /* 글꼴 크기를 1.2rem으로 설정합니다. */
 }
 
 .icon {
-    width: 26px;
-    height: 26px;
-    background-color: var(--color-grey);
-    border-radius: 100%;
-    transition: all 150ms ease-out;
+    width: 26px; /* 가로 길이를 26px로 설정합니다. */
+    height: 26px; /* 세로 길이를 26px로 설정합니다. */
+    background-color: var(--color-grey); /* 배경색을 변수(--color-grey)로 설정합니다. */
+    border-radius: 100%; /* 원형 모양을 만들기 위해 border-radius를 100%로 설정합니다. */
+    transition: all 150ms ease-out; /* 모든 속성에 대한 변화를 150ms 동안 부드럽게 전환합니다. */
 }
 
 .icon:hover {
-    background-color: var(--color-hover);
-    transform: scale(1.2) rotate(15deg);
+    background-color: var(--color-hover); /* 마우스 호버 시 배경색을 변수(--color-hover)로 변경합니다. */
+    transform: scale(1.2) rotate(15deg); /* 1.2배 확대 및 15도 회전하는 변형을 적용합니다. */
 }
 
 .button {
-    color: var(--color-text);
-    background-color: transparent;
+    color: var(--color-text); /* 텍스트 색상을 변수(--color-text)로 설정합니다. */
+    background-color: transparent; /* 배경색을 투명으로 설정합니다. */
 }

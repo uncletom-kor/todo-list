@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/TodoList/Header/Header';
 import TodoList from './components/TodoList/TodoList';
+import { DarkModeProvider } from './context/DarkModeContext';
 
 // 필터 아이템을 가져오는 함수 호출
 const filters = getFiltersItem();
@@ -11,7 +12,7 @@ export default function App() {
     const [filter, setFilter] = useState(filters[0]);
 
     return (
-        <div>
+        <DarkModeProvider>
             {/* Header 컴포넌트에 필요한 props 전달 */}
             <Header
                 filters={filters} // 필터 아이템 배열 전달
@@ -20,7 +21,7 @@ export default function App() {
             />
             {/* TodoList 컴포넌트에 필요한 prop 전달 */}
             <TodoList filter={filter} /> 
-        </div>
+        </DarkModeProvider>
     );
 }
 

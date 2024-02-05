@@ -12,7 +12,7 @@ props로 todo, onUpdate, onDelete를 전달받는다.
 */
 export default function Todo({ todo, onUpdate, onDelete }) {
     // todo 객체에서 text와 status 속성을 추출한다.
-    const { text, status } = todo;
+    const { id, text, status } = todo;
 
     // 체크박스의 상태가 변경될 때 호출되는 함수
     const handleChange = e => {
@@ -33,13 +33,13 @@ export default function Todo({ todo, onUpdate, onDelete }) {
         <li className={styles.todo}>
             <input
                 type="checkbox"
-                id="checkbox"
+                id={id}
                 className={styles.checkbox}
                 checked={status === 'completed'}
                 onChange={handleChange}
             />
             <label
-                htmlFor="checkbox"
+                htmlFor={id}
                 className={styles.text}>
                 {text}
             </label>

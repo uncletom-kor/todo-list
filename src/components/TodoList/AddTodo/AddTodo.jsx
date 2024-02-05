@@ -37,7 +37,7 @@ export default function AddTodo({ onAdd }) {
                 value={text}
                 onChange={handleChange}
             />
-            <button className={styles.button}>Add</button>
+            <button className={styles.button}>추가</button>
         </form>
     );
 }
